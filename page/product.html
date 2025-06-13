@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>產品 - 9分之1咖啡</title>
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <div class="menu-page">
+        <div class="coffee-menu-container">
+            <h1 class="coffee-menu-title">所有商品</h1>
+            
+            <!-- 分類按鈕 -->
+            <div id="category-buttons" class="category-buttons-container">
+                <!-- 分類按鈕將動態生成 -->
+            </div>
+            
+            <!-- 產品網格 -->
+            <div id="coffee-grid" class="coffee-grid">
+                <!-- 產品卡片將透過JavaScript動態生成 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 產品詳情彈窗 -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="product-details">
+                <div class="product-image">
+                    <img id="modal-image" src="" alt="商品圖片">
+                </div>
+                <div class="product-info">
+                    <h2 id="modal-title"></h2>
+                    <p class="price">NT$ <span id="modal-price"></span></p>
+                    <p id="modal-description" class="description"></p>
+                    <div class="product-meta">
+                        <p>商品編號: <span id="modal-id"></span></p>
+                        <p>分類: <span id="modal-category"></span></p>
+                    </div>
+                    <div class="consumption-type">
+                        <label>
+                            <input type="radio" name="consumption" value="內用" checked> 內用
+                        </label>
+                        <label>
+                            <input type="radio" name="consumption" value="外帶"> 外帶
+                        </label>
+                    </div>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn decrease">-</button>
+                        <input type="number" id="quantity" value="1" min="1" max="99">
+                        <button class="quantity-btn increase">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" data-product-id="">
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 購物車面板會由JS動態生成 -->
+
+    <!-- 產品資料 -->
+    <script src="../js/productData.js"></script>
+    <!-- 購物車-->
+    <script src="../js/cart.js"></script>
+    <!-- 產品顯示-->
+    <script src="../js/productDisplay.js"></script>
+
+    <!-- Navbar -->
+    <script>
+        $(function(){
+            $("#navbar-placeholder").load("../component/navbar.html", function() {
+                const currentPage = window.location.pathname.split('/').pop();
+                $("#navbar-placeholder a").each(function() {
+                    if ($(this).attr("href").includes(currentPage)) {
+                        $(this).addClass("active");
+                    }
+                });
+                
+                // 確保購物車圖標在導航欄載入完成後添加
+                if (typeof addCartIconToHeader === 'function') {
+                    setTimeout(addCartIconToHeader, 100);
+                }
+            });
+
+            // 平滑滾動效果
+            $('a[href^="#"]').on('click', function(event) {
+                event.preventDefault();
+                
+                const target = $(this.getAttribute('href'));
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - 80 
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

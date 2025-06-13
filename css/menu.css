@@ -1,0 +1,353 @@
+/* 全局重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "微軟正黑體", Arial, sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+}
+
+/* menu.css */
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.menu-page {
+    padding: 80px 0 50px;
+}
+
+.coffee-menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.coffee-menu-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #4a3520;
+}
+
+/* 分類按鈕區域 */
+.category-buttons-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0 30px;
+    padding: 0 15px;
+}
+
+.category-btn {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 10px 18px;
+    margin: 5px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.category-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.category-btn.active {
+    background-color: #4a3520;
+    color: white;
+    border-color: #4a3520;
+}
+
+
+/* 咖啡菜單標題樣式 */
+.coffee-menu-title {
+    text-align: center;
+    color: #5a3e2a;
+    font-size: 2.2rem;
+    margin: 40px 0;
+    position: relative;
+    font-weight: bold;
+}
+
+.coffee-menu-title::after {
+    content: '';
+    display: block;
+    width: 140px;
+    height: 3px;
+    background-color: #c8a77b;
+    margin: 10px auto 0;
+}
+
+/* 咖啡項目網格布局 */
+.coffee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 咖啡項目卡片樣式 */
+.coffee-item {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.coffee-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 咖啡圖片容器 */
+.coffee-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.coffee-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.coffee-item:hover .coffee-image img {
+    transform: scale(1.05);
+}
+
+/* 咖啡信息區域 */
+.coffee-info {
+    padding: 15px;
+    text-align: center;
+}
+
+/* 咖啡名稱 */
+.coffee-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #5a3e2a;
+}
+
+/* 咖啡價格 */
+.coffee-price {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+/* 查看詳情按鈕 */
+.view-details-btn {
+    background-color: #e9dccd;
+    color: #5a3e2a;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.view-details-btn:hover {
+    background-color: #d1bea2;
+}
+
+/* 使菜單頁面有合適的邊距 */
+.menu-page {
+    padding: 20px 0 60px;
+}
+
+.coffee-menu-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .coffee-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .coffee-menu-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .coffee-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .coffee-image {
+        height: 180px;
+    }
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #000;
+}
+
+/* 產品詳情區域 */
+.product-details {
+    display: flex;
+    gap: 30px;
+}
+
+.product-image {
+    flex: 1;
+    background-color: var(--gray-200);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 300px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    flex: 0 0 55%;
+}
+
+.product-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-info .price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #b78e5c;
+    margin-bottom: 15px;
+}
+
+.product-info .description {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.product-meta {
+    margin-bottom: 15px;
+    color: #666;
+    font-size: 14px;
+}
+
+/* 消費方式選擇 */
+.consumption-type {
+    margin: 20px 0;
+}
+
+.consumption-type label {
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+.consumption-type input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* 數量選擇器 */
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.quantity-btn {
+    background-color: #b78e5c;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity-btn:hover {
+    background-color: #9d8c76;
+}
+
+#quantity {
+    width: 60px;
+    height: 35px;
+    text-align: center;
+    margin: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.add-to-cart-btn {
+    background-color: #b78e5c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #a47a4d;
+}

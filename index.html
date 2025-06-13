@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9分之一</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <div class="banner-container">
+        <div class="banner-images">
+          <img src="./img/banner/banner1.jpg" class="banner-img" alt="Banner 1">
+          <img src="./img/banner/banner2.jpg" class="banner-img" alt="Banner 2">
+          <img src="./img/banner/banner3.jpg" class="banner-img" alt="Banner 3">
+        </div>
+        
+        <!-- <button class="banner-btn prev-btn">&#10094;</button>
+        <button class="banner-btn next-btn">&#10095;</button>
+         -->
+        <div class="banner-dots"></div>
+    </div>
+
+     <!-- 近期菜單 + 商品介紹 -->
+     <section class="intro-section">
+        <div class="container flex-container">
+            <!-- 左邊：只顯示一張預覽圖 -->
+            <div class="preview-image">
+                <img src="./img/menu1.jpg" alt="近期菜單" onclick="openLightbox(0)" />
+            </div>
+
+            <!-- 右邊：文字介紹 -->
+            <div class="text-content">
+                <h2>最新內容介紹</h2>
+                <p>提供最新上架的產品與推薦，讓您第一時間品嚐。</p>
+                <p>我們不定期更換菜單，帶來四季不同的風味體驗。</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Lightbox 放大圖功能（可左右切換） -->
+    <!-- <div class="lightbox" id="lightbox">
+        <span class="close" onclick="closeLightbox()">✕</span>
+        <span class="nav left" onclick="changeImage(-1)">❮</span>
+        <img id="lightbox-img" src="https://fakeimg.pl/250x100/">
+        <span class="nav right" onclick="changeImage(1)">❯</span>
+    </div> -->
+
+    <!-- 品牌理念區 -->
+    <section class="concept-section">
+        <div class="container flex-container">
+            <!-- 左側文字內容 -->
+            <div class="concept-text">
+                <h3>品牌理念介紹</h3>
+                <p>這是一間以深夜為主軸的咖啡廳，為夜裡仍奔波、思考、渴望片刻安靜的人而存在</p>
+                <p>你可以在這裡靜靜地念書，與好友低聲交談，</p>
+                <p>也可以什麼都不做，只是讓自己放鬆、喘口氣。</p>
+                <p>我們希望：在城市沉睡之後，讓每一位顧客在深夜也能有個避風港。</p>
+            </div>
+
+            <!-- 右側圖片按鈕區 -->
+            <div class="concept-image">
+                <div class="feature-box">
+                    <img src="img/情景/91品牌理念3.jpg" alt="主打推薦"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+
+    <!-- Navbar -->
+    <script>
+        $(function(){
+            $("#navbar-placeholder").load("/component/navbar.html", function() {
+                const currentPage = window.location.pathname.split('/').pop();
+                $("#navbar-placeholder a").each(function() {
+                    if ($(this).attr("href").includes(currentPage)) {
+                        $(this).addClass("active");
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Banner -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const bannerImages = document.querySelector('.banner-images');
+          const images = document.querySelectorAll('.banner-img');
+          const dotsContainer = document.querySelector('.banner-dots');
+          // const prevBtn = document.querySelector('.prev-btn');
+          // const nextBtn = document.querySelector('.next-btn');
+          
+          let currentIndex = 0;
+          const totalImages = images.length;
+          
+          // Create dots
+          for (let i = 0; i < totalImages; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active-dot');
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+          }
+          
+          // Initialize banner to first image
+          updateBanner();
+          
+          // Set up event listeners
+          // prevBtn.addEventListener('click', showPreviousSlide);
+          // nextBtn.addEventListener('click', showNextSlide);
+          
+          // Auto play (optional)
+          let intervalId = setInterval(showNextSlide, 3000);
+          
+          // Pause auto play on hover (optional)
+          bannerImages.addEventListener('mouseenter', () => clearInterval(intervalId));
+          bannerImages.addEventListener('mouseleave', () => {
+            clearInterval(intervalId);
+            intervalId = setInterval(showNextSlide, 5000);
+          });
+          
+          function showPreviousSlide() {
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+            updateBanner();
+          }
+          
+          function showNextSlide() {
+            currentIndex = (currentIndex + 1) % totalImages;
+            updateBanner();
+          }
+          
+          function goToSlide(index) {
+            currentIndex = index;
+            updateBanner();
+          }
+          
+          function updateBanner() {
+            bannerImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // Update active dot
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+              if (index === currentIndex) {
+                dot.classList.add('active-dot');
+              } else {
+                dot.classList.remove('active-dot');
+              }
+            });
+          }
+        });
+    </script>
+
+    <!-- Footer -->
+    <script>
+        $(document).ready(function() {
+      $("#footer").load("./component/footer.html");
+    });
+    </script>
+
+</body>
+</html>

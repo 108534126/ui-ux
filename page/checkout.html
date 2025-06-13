@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>結帳確認</title>
+  <link rel="stylesheet" href="../css/checkout.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+  <div class="section">
+    <h2>會員資訊</h2>
+    <p>👑 張采玲</p>
+    <p>生日：2002年3月18號</p>
+    <p>Email：cailing0318@gmail.com</p>
+  </div>
+
+  <div class="section">
+    <h2>已使用優惠券</h2>
+    <label>
+      優惠券：
+      <input type="text" id="coupon-input" placeholder="輸入優惠碼">
+    </label>
+    <button id="show-coupon-btn">已有優惠券</button>
+    <div id="coupon-list" style="display:none; margin-top: 1rem;">
+      <div class="coupon-card" data-code="FREE" data-type="shipping" style="border: 1px solid #ccc; padding: 1rem; margin-bottom: 0.5rem; cursor: pointer;">
+        <h4>滿百元即享免運優惠</h4>
+        <p>優惠券代碼：<strong>FREE</strong></p>
+        <span>無門檻，結帳可選擇免運</span>
+      </div>
+      <div class="coupon-card" data-code="ALL" data-type="percent" data-value="0.95" style="border: 1px solid #ccc; padding: 1rem; margin-bottom: 0.5rem; cursor: pointer;">
+        <h4>所有商品 95 折</h4>
+        <p>優惠券代碼：<strong>ALL</strong></p>
+        <span>結帳金額自動打 95 折</span>
+      </div>
+      <div class="coupon-card" data-code="Only" data-type="item" data-value="0.85" style="border: 1px solid #ccc; padding: 1rem; margin-bottom: 0.5rem; cursor: pointer;">
+        <h4>指定品項 85 折</h4>
+        <p>優惠券代碼：<strong>Only</strong></p>
+        <span>限指定商品可使用</span>
+      </div>
+    </div>
+    <p id="coupon-display">（未使用）</p>
+  </div>
+  
+
+  <div class="section">
+    <h2>購物車內容</h2>
+    <div id="cart-items"></div>
+    <div class="summary" id="summary"></div>
+  </div>
+
+  <script>
+    const data = JSON.parse(sessionStorage.getItem('checkoutData'));
+    if (data) {
+      let discount = 1;
+      let usedCoupon = '';
+  
+      // 顯示初始內容
+      document.getElementById('coupon-display').textContent = data.couponCode || '（未使用）';
+      const cartItems = document.getElementById('cart-items');
+      data.items.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `<div>${item.name} (${item.consumptionType}) x ${item.quantity}</div><div>$${(item.price * item.quantity).toFixed(2)}</div>`;
+        cartItems.appendChild(div);
+      });
+  
+      // 顯示總計
+      const summaryEl = document.getElementById('summary');
+      function updateSummary() {
+        const discountedTotal = (data.total * discount).toFixed(0);
+        summaryEl.textContent = `商品總數：${data.totalCount}　總金額：NT$${discountedTotal}${usedCoupon ? `（已使用 ${usedCoupon}）` : ''}`;
+      }
+      updateSummary();
+  
+      // 點按鈕顯示優惠券列表
+      document.getElementById('show-coupon-btn').onclick = () => {
+        document.getElementById('coupon-list').style.display = 'block';
+      };
+  
+      // 點選優惠券卡片
+      document.querySelectorAll('.coupon-card').forEach(card => {
+        card.onclick = () => {
+          usedCoupon = card.dataset.code;
+          document.getElementById('coupon-display').textContent = usedCoupon;
+          // 根據優惠類型決定折扣
+          if (card.dataset.type === 'percent') {
+            discount = parseFloat(card.dataset.value);
+          } else if (card.dataset.type === 'shipping') {
+            // 這裡可以另設 shipping cost 邏輯，此例免運不調整商品總額
+            discount = 1;
+          } else if (card.dataset.type === 'item') {
+            // 簡化處理為全單 85 折
+            discount = parseFloat(card.dataset.value);
+          }
+          updateSummary();
+        };
+      });
+    }
+  </script>
+  <!-- 導航欄固定的設計 -->
+  <script>
+    $(function(){
+        $("#navbar-placeholder").load("../component/navbar.html", function() {
+            // 可選：高亮當前頁面
+            const currentPage = window.location.pathname.split('/').pop();
+            $("#navbar-placeholder a").each(function() {
+                if ($(this).attr("href").includes(currentPage)) {
+                    $(this).addClass("active");
+                }
+            });
+        });
+
+        // 平滑滾動效果
+        $('a[href^="#"]').on('click', function(event) {
+            event.preventDefault();
+            
+            const target = $(this.getAttribute('href'));
+            if (target.length) {
+                $('html, body').animate({
+                    scrollTop: target.offset().top - 80 // 減去導航欄高度
+                }, 1000);
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar</title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/cart.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <span class="logo-text-dark">9分</span><span class="logo-text-accent">之1</span>
+                </a>
+            </div>
+    
+            <nav class="nav-links">
+                <!-- <div class="nav-item">
+                    <a href="" onclick="showHomePage()">店家介紹</a>
+                </div> -->
+    
+                <div class="nav-item dropdown">
+                    <a href="../page/about_us.html">關於我們<span class="dropdown-icon">▾</span></a>
+                    <div class="dropdown-content">
+                        <a href="../page/about_us.html#about_intro">背景介紹</a>
+                        <a href="../page/about_us.html#about_qa">訪談Q&A</a>
+                    </div>
+                </div>
+    
+                <div class="nav-item dropdown">
+                    <a href="../page/product.html">商品介紹 <span class="dropdown-icon">▾</span></a>
+                    <div class="dropdown-content">
+                        <a href="../page/product.html#coffee">咖啡種類</a>
+                        <a href="../page/product.html#other-drinks">特色飲品</a>
+                        <a href="../page/product.html#dessert">甜點品項</a>
+                        <a href="../page/product.html#savory">熟食品項</a>
+                        <a href="../page/product.html#beans">咖啡豆品種</a>
+                    </div>
+                </div>
+    
+                <div class="nav-item">
+                    <a href="../page/member.html">會員資訊</a>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="../page/secret.html">隱私權政策</a>
+                </div>
+            </nav>
+            
+            <div class="cart-icon" onclick="ShoppingCart.openCartPage()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span id="cart-counter" class="cart-counter hidden">0</span>
+            </div>
+        </div>
+
+        <script src="../js/cart.js"></script>
+    </header>
+</body>
+</html>

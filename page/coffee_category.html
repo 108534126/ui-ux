@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9分之一</title>
+    <link rel="stylesheet" href="../css/menu.css" />   
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    
+    <div>
+        <div id="navbar-placeholder"></div>
+        <section id="coffee-menu" class="menu-page">
+            <div class="coffee-menu-container">
+                <h2 class="coffee-menu-title">咖啡</h2>
+    
+                <div class="coffee-grid">
+                    <div class="coffee-item" onclick="openProductModal('espresso')">
+                        <div class="coffee-image">
+                            <img src="https://fakeimg.pl/350x200/?text=World&font=lobster" alt="濃縮咖啡">
+                        </div>
+                        <div class="coffee-info">
+                            <div class="coffee-name">濃縮咖啡</div>
+                            <div class="coffee-price">NT$90</div>
+                            <button class="view-details-btn">查看詳情</button>
+                        </div>
+                    </div>
+    
+                    <div class="coffee-item" onclick="openProductModal('americano')">
+                        <div class="coffee-image">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                                alt="美式咖啡">
+                        </div>
+                        <div class="coffee-info">
+                            <div class="coffee-name">美式咖啡</div>
+                            <div class="coffee-price">NT$90</div>
+                            <button class="view-details-btn">查看詳情</button>
+                        </div>
+                    </div>
+    
+                    <div class="coffee-item" onclick="openProductModal('latte')">
+                        <div class="coffee-image">
+                            <img src="C:\Users\ppo09\Desktop\9分之1網站\img\咖啡\拿鐵咖啡.png" alt="拿鐵咖啡">
+                        </div>
+                        <div class="coffee-info">
+                            <div class="coffee-name">拿鐵咖啡</div>
+                            <div class="coffee-price">NT$120</div>
+                            <button class="view-details-btn">查看詳情</button>
+                        </div>
+                    </div>
+    
+                    <div class="coffee-item" onclick="openProductModal('cappuccino')">
+                        <div class="coffee-image">
+                            <img src="C:\Users\ppo09\Desktop\9分之1網站\img\咖啡\卡布奇諾.jpg" alt="卡布奇諾">
+                        </div>
+                        <div class="coffee-info">
+                            <div class="coffee-name">卡布奇諾</div>
+                            <div class="coffee-price">NT$120</div>
+                            <button class="view-details-btn">查看詳情</button>
+                        </div>
+                    </div>
+    
+                    <div class="coffee-item" onclick="openProductModal('flavored-latte')">
+                        <div class="coffee-image">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                                alt="風味拿鐵">
+                        </div>
+                        <div class="coffee-info">
+                            <div class="coffee-name">風味拿鐵</div>
+                            <div class="coffee-price">NT$130</div>
+                            <button class="view-details-btn">查看詳情</button>
+                        </div>
+                    </div>
+    
+                    <div class="coffee-item" onclick="openProductModal('mocha-latte')">
+                        <div class="coffee-image">
+                            <img src="C:\Users\ppo09\Desktop\9分之1網站\img\咖啡\摩卡拿鐵.png" alt="摩卡拿鐵">
+                        </div>
+                        <div class="coffee-info">
+                            <div class="coffee-name">摩卡拿鐵</div>
+                            <div class="coffee-price">NT$140</div>
+                            <button class="view-details-btn">查看詳情</button>
+                        </div>
+                    </div>
+    
+                    <div class="coffee-item" onclick="openProductModal('caramel-macchiato')">
+                        <div class="coffee-image">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                                alt="焦糖瑪奇朵">
+                        </div>
+                        <div class="coffee-info">
+                            <div class="coffee-name">焦糖瑪奇朵</div>
+                            <div class="coffee-price">NT$140</div>
+                            <button class="view-details-btn">查看詳情</button>
+                        </div>
+                    </div>
+    
+                    <div class="coffee-item" onclick="openProductModal('salted-caramel')">
+                        <div class="coffee-image">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                                alt="焦糖鹽之花">
+                        </div>
+                        <div class="coffee-info">
+                            <div class="coffee-name">焦糖鹽之花</div>
+                            <div class="coffee-price">NT$140</div>
+                            <button class="view-details-btn">查看詳情</button>
+                        </div>
+                    </div>
+    
+                    <div class="coffee-item" onclick="openProductModal('sicilian-coffee')">
+                        <div class="coffee-image">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                                alt="西西里咖啡">
+                        </div>
+                        <div class="coffee-info">
+                            <div class="coffee-name">西西里咖啡</div>
+                            <div class="coffee-price">NT$140</div>
+                            <button class="view-details-btn">查看詳情</button>
+                        </div>
+                    </div>
+                    <div class="coffee-item" onclick="openProductModal('creme-brulee-latte')">
+                        <div class="coffee-image">
+                            <img src="C:\Users\ppo09\Desktop\9分之1網站\img\咖啡\烤布蕾拿鐵.png" alt="烤布蕾拿鐵">
+                        </div>
+                        <div class="coffee-info">
+                            <div class="coffee-name">烤布蕾拿鐵</div>
+                            <div class="coffee-price">NT$140</div>
+                            <button class="view-details-btn">查看詳情</button>
+                        </div>
+                    </div>
+                    <div class="coffee-item" onclick="openProductModal('iced-brick-latte')">
+                        <div class="coffee-image">
+                            <img src="C:\Users\ppo09\Desktop\9分之1網站\img\咖啡\冰磚拿鐵.png" alt="冰磚拿鐵">
+                        </div>
+                        <div class="coffee-info">
+                            <div class="coffee-name">冰磚拿鐵</div>
+                            <div class="coffee-price">NT$150</div>
+                            <button class="view-details-btn">查看詳情</button>
+                        </div>
+                    </div>
+                    <div class="coffee-item" onclick="openProductModal('matcha-coffee')">
+                        <div class="coffee-image">
+                            <img src="C:\Users\ppo09\Desktop\9分之1網站\img\咖啡\抹茶咖啡.png" alt="抹茶咖啡">
+                        </div>
+                        <div class="coffee-info">
+                            <div class="coffee-name">抹茶咖啡</div>
+                            <div class="coffee-price">NT$150</div>
+                            <button class="view-details-btn">查看詳情</button>
+                        </div>
+                    </div>
+                    <div class="coffee-item" onclick="openProductModal('oreo-latte')">
+                        <div class="coffee-image">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                                alt="Oreo 拿鐵">
+                        </div>
+                        <div class="coffee-info">
+                            <div class="coffee-name">Oreo 拿鐵</div>
+                            <div class="coffee-price">NT$160</div>
+                            <button class="view-details-btn">查看詳情</button>
+                        </div>
+                    </div>
+                    <div class="coffee-item" onclick="openProductModal('grapefruit-americano')">
+                        <div class="coffee-image">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                                alt="冰河柚香美式">
+                        </div>
+                        <div class="coffee-info">
+                            <div class="coffee-name">冰河柚香美式</div>
+                            <div class="coffee-price">NT$160</div>
+                            <button class="view-details-btn">查看詳情</button>
+                        </div>
+                    </div>
+                    <div class="coffee-item" onclick="openProductModal('perfume-season')">
+                        <div class="coffee-image">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                                alt="香水用季">
+                        </div>
+                        <div class="coffee-info">
+                            <div class="coffee-name">香水用季</div>
+                            <div class="coffee-price">NT$160</div>
+                            <button class="view-details-btn">查看詳情</button>
+                        </div>
+                    </div>
+                    <div class="coffee-item" onclick="openProductModal('priest')">
+                        <div class="coffee-image">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                                alt="神父">
+                        </div>
+                        <div class="coffee-info">
+                            <div class="coffee-name">神父</div>
+                            <div class="coffee-price">NT$160</div>
+                            <button class="view-details-btn">查看詳情</button>
+                        </div>
+                    </div>
+                    <div class="coffee-item" onclick="openProductModal('seasonal-special')">
+                        <div class="coffee-image">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                                alt="季節限定">
+                        </div>
+                        <div class="coffee-info">
+                            <div class="coffee-name">季節限定</div>
+                            <div class="coffee-price">NT$180</div>
+                            <button class="view-details-btn">查看詳情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        $(function(){
+            $("#navbar-placeholder").load("../component/navbar.html", function() {
+                // 可選：高亮當前頁面
+                const currentPage = window.location.pathname.split('/').pop();
+                $("#navbar-placeholder a").each(function() {
+                    if ($(this).attr("href").includes(currentPage)) {
+                        $(this).addClass("active");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

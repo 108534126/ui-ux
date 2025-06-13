@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>會員資訊</title>
+  <link rel="stylesheet" href="../css/member.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+  <div class="container">
+
+    <div class="member-info">
+      <div class="avatar-circle">👑</div>
+      <div class="details">
+        <h2>張采玲</h2>
+        <p>生日：2002年3月18號</p>
+        <p>Email：cailing0318@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="coupon-input">
+      <input id="new-coupon-code" type="text" placeholder="輸入優惠碼" />
+      <button id="add-coupon-btn">新增優惠券</button>
+    </div>
+
+    <div class="coupon-list" id="coupon-list">
+      <h3>可用優惠券</h3>
+
+      <div class="coupon-card">
+        <h4>滿百元即享免運優惠</h4>
+        <p>優惠券代碼：<strong>FREE</strong></p>
+        <span>無門檻，結帳可選擇免運</span>
+      </div>
+
+      <div class="coupon-card">
+        <h4>所有商品 95 折</h4>
+        <p>優惠券代碼：<strong>ALL</strong></p>
+        <span>結帳金額自動打 95 折</span>
+      </div>
+
+      <div class="coupon-card">
+        <h4>指定品項 85 折</h4>
+        <p>優惠券代碼：<strong>Only</strong></p>
+        <span>限指定商品可使用</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const addBtn = document.getElementById("add-coupon-btn");
+    const input = document.getElementById("new-coupon-code");
+    const list = document.getElementById("coupon-list");
+
+    addBtn.addEventListener("click", () => {
+      const code = input.value.trim();
+      if (!code) return;
+
+      const card = document.createElement("div");
+      card.className = "coupon-card";
+      card.innerHTML = `
+        <h4>自訂優惠券</h4>
+        <p>優惠券代碼：<strong>${code}</strong></p>
+        <span>您新增的優惠券</span>
+      `;
+      list.appendChild(card);
+      input.value = "";
+    });
+  </script>
+
+  <!-- 導航欄固定的設計 -->
+  <script>
+    $(function(){
+        $("#navbar-placeholder").load("../component/navbar.html", function() {
+            // 可選：高亮當前頁面
+            const currentPage = window.location.pathname.split('/').pop();
+            $("#navbar-placeholder a").each(function() {
+                if ($(this).attr("href").includes(currentPage)) {
+                    $(this).addClass("active");
+                }
+            });
+        });
+
+        // 平滑滾動效果
+        $('a[href^="#"]').on('click', function(event) {
+            event.preventDefault();
+            
+            const target = $(this.getAttribute('href'));
+            if (target.length) {
+                $('html, body').animate({
+                    scrollTop: target.offset().top - 80 // 減去導航欄高度
+                }, 1000);
+            }
+        });
+    });
+</script>
+</body>
+</html>

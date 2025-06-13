@@ -1,0 +1,191 @@
+/* 導航欄基本樣式 */
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 50px;
+}
+
+/* Logo 樣式 */
+.logo a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo-text-dark {
+    color: #333333;
+}
+
+.logo-text-accent {
+    color: #c87f0a;
+}
+
+/* 導航連結 */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-item {
+    position: relative;
+    padding: 0 5px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-item a:hover {
+    color: #c87f0a;
+}
+
+/* 下拉菜單樣式 */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-icon {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.dropdown-content {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+    transform: translateY(10px);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-content a {
+    color: #333333;
+    padding: 12px 16px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f9f2e7;
+    color: #c87f0a;
+}
+
+/* 購物車圖標 */
+.cart-icon {
+    font-size: 12px;
+    color: #333333;
+}
+
+.cart-icon:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .logo {
+        margin-bottom: 15px;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+    }
+    
+    .nav-item {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #f1f1f1;
+    }
+    
+    .dropdown-content {
+        position: static;
+        visibility: visible;
+        opacity: 1;
+        box-shadow: none;
+        display: none;
+        padding: 0;
+        margin-top: 10px;
+        transform: none;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    .dropdown-content a {
+        padding: 8px 15px;
+        background-color: #f9f9f9;
+    }
+    
+    .nav-container div:last-child {
+        margin-top: 15px;
+    }
+}
+
+
+.nav-item a.active {
+    color: #c87f0a;
+    font-weight: 600;
+}
+
+/* 漢堡選單按鈕 - 僅在移動設備上顯示 */
+.mobile-menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .nav-links.show {
+        display: flex;
+    }
+} 
