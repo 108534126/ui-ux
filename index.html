@@ -75,7 +75,7 @@
     <!-- Navbar -->
     <script>
         $(function(){
-            $("#navbar-placeholder").load("/component/navbar.html", function() {
+            $("#navbar-placeholder").load("./component/navbar.html", function() {
                 const currentPage = window.location.pathname.split('/').pop();
                 $("#navbar-placeholder a").each(function() {
                     if ($(this).attr("href").includes(currentPage)) {
