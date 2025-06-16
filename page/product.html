@@ -6,7 +6,7 @@
     <title>商品</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <base href="/ui-ux/">
-    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/cart.css">
 </head>
@@ -69,16 +69,16 @@
     <!-- 購物車面板會由JS動態生成 -->
 
     <!-- 產品資料 -->
-    <script src="../js/productData.js"></script>
+    <script src="./js/productData.js"></script>
     <!-- 購物車-->
-    <script src="../js/cart.js"></script>
+    <script src="./js/cart.js"></script>
     <!-- 產品顯示-->
-    <script src="../js/productDisplay.js"></script>
+    <script src="./js/productDisplay.js"></script>
 
     <!-- Navbar -->
     <script>
         $(function(){
-            $("#navbar-placeholder").load("../component/navbar.html", function() {
+            $("#navbar-placeholder").load("./component/navbar.html", function() {
                 const currentPage = window.location.pathname.split('/').pop();
                 $("#navbar-placeholder a").each(function() {
                     if ($(this).attr("href").includes(currentPage)) {
