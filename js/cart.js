@@ -219,7 +219,7 @@ const ShoppingCart = (function() {
                     couponCode: null // 如果有優惠券系統可從這裡加入
                 };
                 sessionStorage.setItem('checkoutData', JSON.stringify(checkoutData));
-                window.location.href = 'checkout.html';
+                window.location.href = 'page/checkout.html';
             };
 
             const cartItems = cartPanel.querySelectorAll('.cart-item');
