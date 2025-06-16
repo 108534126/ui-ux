@@ -2,7 +2,7 @@ const productCoffee = {
     'espresso': {
         name: '濃縮咖啡',
         price: '90',
-        image: './img/咖啡/coffee1.png',
+        image: '/ui-ux/img/咖啡/coffee1.png',
         description: '義式濃縮咖啡是咖啡的精華，濃縮了咖啡的香氣和風味。我們使用精選的咖啡豆，經過專業的烘焙和沖煮，為您帶來最純粹的咖啡體驗。',
         id: 'CF001',
         category: '咖啡'
@@ -18,7 +18,7 @@ const productCoffee = {
     'latte': {
         name: '拿鐵咖啡',
         price: '120',
-        image: './img/咖啡/coffee2.png',
+        image: '/ui-ux/img/咖啡/coffee2.png',
         description: '拿鐵咖啡是由濃縮咖啡和蒸煮牛奶組成，口感順滑，奶香濃郁。我們的拿鐵使用優質鮮奶，搭配完美比例的濃縮咖啡，為您帶來絕佳的口感體驗。',
         id: 'CF003',
         category: '咖啡'
@@ -27,7 +27,7 @@ const productCoffee = {
     'cappuccino': {
         name: '卡布奇諾',
         price: '120',
-        image: './img/咖啡/coffee3.png',
+        image: '/ui-ux/img/咖啡/coffee3.png',
         description: '卡布奇諾融合濃縮咖啡、熱牛奶與奶泡，口感細膩滑順，帶有淡淡苦甜餘韻。',
         id: 'CF004',
         category: '咖啡'
@@ -43,7 +43,7 @@ const productCoffee = {
     'mocha-latte': {
         name: '摩卡拿鐵',
         price: '140',
-        image: './img/咖啡/coffee4.png',
+        image: '/ui-ux/img/咖啡/coffee4.png',
         description: '摩卡拿鐵融合巧克力與咖啡香氣，是巧克力與咖啡愛好者的絕佳選擇。',
         id: 'CF006',
         category: '咖啡'
@@ -75,7 +75,7 @@ const productCoffee = {
     'creme-brulee-latte': {
         name: '烤布蕾拿鐵',
         price: '140',
-        image: './img/咖啡/coffee25.png',
+        image: '/ui-ux/img/咖啡/coffee25.png',
         description: '將法式烤布蕾風味融入拿鐵之中，甜中帶奶，滑順回甘。',
         id: 'CF010',
         category: '咖啡'
@@ -91,7 +91,7 @@ const productCoffee = {
     'matcha-coffee': {
         name: '抹茶咖啡',
         price: '150',
-        image: './img/咖啡/coffee28.png',
+        image: '/ui-ux/img/咖啡/coffee28.png',
         description: '融合日式抹茶與濃縮咖啡，帶有自然茶香與咖啡濃郁的奇妙交融。',
         id: 'CF012',
         category: '咖啡'
@@ -126,7 +126,7 @@ const productDrink = {
     'thai-milk-tea': {
         name: '泰式奶茶',
         price: '140',
-        image: './img/咖啡/coffee12.png',
+        image: '/ui-ux/img/咖啡/coffee12.png',
         description: '泰國經典甜茶，帶有香料風味，香甜濃厚，深受喜愛。',
         id: 'OD002',
         category: '特色飲品'
@@ -134,7 +134,7 @@ const productDrink = {
     'classic-cocoa': {
         name: '經典可可',
         price: '140',
-        image: './img/咖啡/coffee11.png',
+        image: '/ui-ux/img/咖啡/coffee11.png',
         description: '濃郁巧克力味的經典可可飲品，暖心又滿足。',
         id: 'OD003',
         category: '特色飲品'
@@ -142,7 +142,7 @@ const productDrink = {
     'black-tea-latte': {
         name: '紅茶拿鐵',
         price: '140',
-        image: './img/咖啡/coffee17.png',
+        image: '/ui-ux/img/咖啡/coffee17.png',
         description: '滑順奶泡與濃厚紅茶結合，香氣四溢的紅茶拿鐵。',
         id: 'OD004',
         category: '特色飲品'
@@ -150,7 +150,7 @@ const productDrink = {
     'matcha-latte': {
         name: '抹茶拿鐵',
         price: '140',
-        image: './img/咖啡/coffee28.png',
+        image: '/ui-ux/img/咖啡/coffee28.png',
         description: '選用優質抹茶，搭配鮮奶製成的濃郁抹茶拿鐵。',
         id: 'OD005',
         category: '特色飲品'
@@ -158,7 +158,7 @@ const productDrink = {
     'brown-sugar-milk': {
         name: '黑糖珍珠鮮奶',
         price: '140',
-        image: './img/咖啡/coffee24.png',
+        image: '/ui-ux/img/咖啡/coffee24.png',
         description: 'Q彈珍珠配上香甜黑糖和鮮奶，口感層次豐富。',
         id: 'OD006',
         category: '特色飲品'
@@ -166,7 +166,7 @@ const productDrink = {
     'brown-sugar-pearl-black-tea-latte': {
         name: '黑糖珍珠紅茶拿鐵',
         price: '150',
-        image: './img/咖啡/coffee24.png',
+        image: '/ui-ux/img/咖啡/coffee24.png',
         description: '黑糖珍珠搭配濃厚紅茶拿鐵，甜而不膩的經典組合。',
         id: 'OD007',
         category: '特色飲品'
@@ -174,7 +174,7 @@ const productDrink = {
     'honey-lemon': {
         name: '蜂蜜檸檬',
         price: '130',
-        image: './img/咖啡/coffee16.png',
+        image: '/ui-ux/img/咖啡/coffee16.png',
         description: '清新檸檬搭配天然蜂蜜，酸甜爽口，解渴又健康。',
         id: 'OD008',
         category: '特色飲品'
@@ -182,7 +182,7 @@ const productDrink = {
     'honey-yuzu': {
         name: '蜂蜜柚子',
         price: '130',
-        image: './img/咖啡/coffee29.png',
+        image: '/ui-ux/img/咖啡/coffee29.png',
         description: '柚子香氣濃郁，配上甜蜜蜂蜜，滋味獨特。',
         id: 'OD009',
         category: '特色飲品'
@@ -206,7 +206,7 @@ const productDrink = {
     'summer-mango': {
         name: '夏日芒果',
         price: '130',
-        image: './img/特色飲品/夏日芒果.png',
+        image: '/ui-ux/img/特色飲品/夏日芒果.png',
         description: '新鮮芒果果香濃郁，清爽宜人，夏季首選。',
         id: 'OD012',
         category: '特色飲品'
@@ -222,7 +222,7 @@ const productDrink = {
     'strawberry-milk': {
         name: '草莓牛奶',
         price: '170',
-        image: './img/特色飲品/草莓牛奶.png',
+        image: '/ui-ux/img/特色飲品/草莓牛奶.png',
         description: '新鮮草莓與牛奶的完美融合，香甜順口。',
         id: 'OD014',
         category: '特色飲品'
@@ -246,7 +246,7 @@ const productDrink = {
     'matcha-cream': {
         name: '抹茶奶霜',
         price: '170',
-        image: './img/咖啡/coffee20.png',
+        image: '/ui-ux/img/咖啡/coffee20.png',
         description: '濃郁抹茶搭配細緻奶霜，層次豐富。',
         id: 'OD017',
         category: '特色飲品'
@@ -254,7 +254,7 @@ const productDrink = {
     'choco-crunch': {
         name: '巧克力可可脆片',
         price: '170',
-        image: './img/特色飲品/巧克力可可脆片.jpg',
+        image: '/ui-ux/img/特色飲品/巧克力可可脆片.jpg',
         description: '巧克力與可可脆片的完美組合，口感酥脆。',
         id: 'OD018',
         category: '特色飲品'
@@ -262,7 +262,7 @@ const productDrink = {
     'cranberry-vinegar': {
         name: '蔓越莓果醋',
         price: '170',
-        image: './img/特色飲品/蔓越莓果醋.jpg',
+        image: '/ui-ux/img/特色飲品/蔓越莓果醋.jpg',
         description: '酸甜蔓越莓果醋，健康又開胃。',
         id: 'OD019',
         category: '特色飲品'
@@ -286,7 +286,7 @@ const productDrink = {
     'jin-xuan': {
         name: '金萱',
         price: '90',
-        image: './img/特色飲品/金萱.png',
+        image: '/ui-ux/img/特色飲品/金萱.png',
         description: '柔和奶香的台灣金萱茶，口感溫潤順口。',
         id: 'OD022',
         category: '特色飲品'
@@ -310,7 +310,7 @@ const productDrink = {
     'relax-sleep-tea': {
         name: '紓壓好眠茶',
         price: '110',
-        image: './img/特色飲品/紓壓好眠茶.png',
+        image: '/ui-ux/img/特色飲品/紓壓好眠茶.png',
         description: '結合多種草本植物，幫助放鬆身心，促進好眠。',
         id: 'OD025',
         category: '特色飲品'
@@ -358,7 +358,7 @@ const productDrink = {
     'lemon-black-tea': {
         name: '檸檬紅茶',
         price: '120',
-        image: './img/特色飲品/檸檬紅茶.png',
+        image: '/ui-ux/img/特色飲品/檸檬紅茶.png',
         description: '經典檸檬紅茶，酸甜爽口，夏日消暑首選。',
         id: 'OD031',
         category: '特色飲品'
@@ -366,7 +366,7 @@ const productDrink = {
     'honey-yuzu-tea': {
         name: '蜂蜜柚子茶',
         price: '110',
-        image: './img/特色飲品/蜂蜜柚子茶.png',
+        image: '/ui-ux/img/特色飲品/蜂蜜柚子茶.png',
         description: '柚子香氣濃郁，搭配蜂蜜甜味，清新潤口。',
         id: 'OD032',
         category: '特色飲品'
@@ -401,7 +401,7 @@ const productDessert = {
     'original-canele': {
         name: '原味可麗露',
         price: '65',
-        image: './img/甜點/des2.png',
+        image: '/ui-ux/img/甜點/des2.png',
         description: '經典原味可麗露，外皮酥脆焦糖化，內部柔軟濕潤，帶有香草與蘭姆酒香氣，是法國傳統甜點的極致呈現。',
         id: 'DS001',
         category: '甜點'
@@ -417,7 +417,7 @@ const productDessert = {
     'lemon-tart': {
         name: '法式檸檬塔',
         price: '85',
-        image: './img/甜點/des10.png',
+        image: '/ui-ux/img/甜點/des10.png',
         description: '法式檸檬塔酸甜爽口，塔皮酥脆，搭配滑順檸檬內餡，是下午茶的首選甜點。',
         id: 'DS003',
         category: '甜點'
@@ -425,7 +425,7 @@ const productDessert = {
     'blueberry-cheesecake': {
         name: '藍莓起司',
         price: '100',
-        image: './img/甜點/des19.png',
+        image: '/ui-ux/img/甜點/des19.png',
         description: '濃郁奶香搭配新鮮藍莓果醬，完美融合酸甜與奶香的藍莓起司蛋糕。',
         id: 'DS004',
         category: '甜點'
@@ -433,7 +433,7 @@ const productDessert = {
     'classic-cheesecake': {
         name: '經典重乳酪',
         price: '100',
-        image: './img/甜點/des20.png',
+        image: '/ui-ux/img/甜點/des20.png',
         description: '重乳酪蛋糕，口感紮實濃郁，每一口都散發濃濃起司香，是起司愛好者的首選。',
         id: 'DS005',
         category: '甜點'
@@ -441,7 +441,7 @@ const productDessert = {
     'truffe-chocolate': {
         name: '楚浮巧克力',
         price: '100',
-        image: './img/甜點/des14.png',
+        image: '/ui-ux/img/甜點/des14.png',
         description: '濃郁巧克力蛋糕，加入法式楚浮巧克力餡，香濃不甜膩，令人回味無窮。',
         id: 'DS006',
         category: '甜點'
@@ -449,7 +449,7 @@ const productDessert = {
     'matcha-mille-crepe': {
         name: '抹茶千層',
         price: '110',
-        image: './img/甜點/des17.png',
+        image: '/ui-ux/img/甜點/des17.png',
         description: '層層堆疊的千層餅皮，搭配香濃抹茶卡士達內餡，茶香濃郁、甜而不膩。',
         id: 'DS007',
         category: '甜點'
@@ -457,7 +457,7 @@ const productDessert = {
     'oreo-tiramisu': {
         name: 'Oreo 提拉米蘇',
         price: '120',
-        image: './img/甜點/des17.png',
+        image: '/ui-ux/img/甜點/des17.png',
         description: '將經典提拉米蘇融合 Oreo 餅乾的創新甜點，增添香脆與可可香。',
         id: 'DS008',
         category: '甜點'
@@ -465,7 +465,7 @@ const productDessert = {
     'oolong-mille-crepe': {
         name: '炭焙烏龍千層',
         price: '120',
-        image: './img/甜點/des16.png',
+        image: '/ui-ux/img/甜點/des16.png',
         description: '炭焙烏龍茶風味濃郁，融合在層層餅皮與奶餡中，香氣獨特、口感細緻。',
         id: 'DS009',
         category: '甜點'
@@ -473,7 +473,7 @@ const productDessert = {
     'chocolate-muffin': {
         name: '巧克力鬆餅',
         price: '135',
-        image: './img/甜點/des1.png',
+        image: '/ui-ux/img/甜點/des1.png',
         description: '外酥內軟的鬆餅淋上濃郁巧克力醬，每一口都甜蜜滿分。',
         id: 'DS010',
         category: '甜點'
@@ -481,7 +481,7 @@ const productDessert = {
     'honey-pancake': {
         name: '蜂蜜鬆餅',
         price: '135',
-        image: './img/甜點/des6.png',
+        image: '/ui-ux/img/甜點/des6.png',
         description: '經典蜂蜜鬆餅，香氣四溢，搭配蜂蜜與奶油，是早午餐或下午茶的最佳選擇。',
         id: 'DS011',
         category: '甜點'
@@ -564,7 +564,7 @@ const productFood = {
     'pasta-trio': {
         name: '義大利麵 (青醬/白醬/紅醬)',
         price: '200 | 280',
-        image: './img/鹹食/food11.png',
+        image: '/ui-ux/img/鹹食/food11.png',
         description: '三種經典義大利麵醬可選，適合各種口味偏好。',
         id: 'SV008',
         category: '熟食品項'
