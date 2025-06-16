@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>結帳確認</title>
-  <link rel="stylesheet" href="../css/checkout.css" />
+  <link rel="stylesheet" href="css/checkout.css" />
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <base href="/ui-ux/">
     <link rel="stylesheet" href="css/navbar.css">
@@ -105,7 +105,7 @@
   <!-- 導航欄固定的設計 -->
   <script>
     $(function(){
-        $("#navbar-placeholder").load("../component/navbar.html", function() {
+        $("#navbar-placeholder").load("./component/navbar.html", function() {
             // 可選：高亮當前頁面
             const currentPage = window.location.pathname.split('/').pop();
             $("#navbar-placeholder a").each(function() {
