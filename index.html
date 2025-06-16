@@ -6,9 +6,9 @@
     <title>9分之一</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <base href="/coffee-shop/">
-    <link rel="stylesheet" href="./css/navbar.css">
-    <link rel="stylesheet" href="./css/cart.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="page/css/navbar.css">
+    <link rel="stylesheet" href="page/css/cart.css">
+    <link rel="stylesheet" href="page/style.css">
 </head>
 <body>
     <div id="navbar-placeholder"></div>
@@ -77,7 +77,7 @@
     <!-- Navbar -->
     <script>
         $(function(){
-            $("#navbar-placeholder").load("./component/navbar.html", function() {
+            $("#navbar-placeholder").load("page/component/navbar.html", function() {
                 const currentPage = window.location.pathname.split('/').pop();
                 $("#navbar-placeholder a").each(function() {
                     if ($(this).attr("href").includes(currentPage)) {
