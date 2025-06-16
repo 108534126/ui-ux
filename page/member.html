@@ -6,7 +6,7 @@
   <title>會員資訊</title>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <base href="/ui-ux/">
-  <link rel="stylesheet" href="css/member.css" />
+  <link rel="stylesheet" href="/ui-ux/css/member.css" />
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/cart.css">
 </head>
@@ -76,7 +76,7 @@
   <!-- 導航欄固定的設計 -->
   <script>
     $(function(){
-        $("#navbar-placeholder").load("./component/navbar.html", function() {
+        $("#navbar-placeholder").load("/ui-ux/component/navbar.html", function() {
             // 可選：高亮當前頁面
             const currentPage = window.location.pathname.split('/').pop();
             $("#navbar-placeholder a").each(function() {
